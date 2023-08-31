@@ -1,0 +1,10 @@
+os:
+  editPreset: nvim
+git:
+  commitPrefixes:
+    wda_frontend: # This is repository folder name
+      pattern: "^\\w+\\/(\\w+-\\w+).*"
+      replace: '[$1] '
+    wda_backend: # This is repository folder name
+      pattern: "^\\w+\\/(\\w+-\\w+).*"
+      replace: '[$1] '
