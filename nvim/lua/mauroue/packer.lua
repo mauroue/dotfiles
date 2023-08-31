@@ -12,13 +12,7 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- Recommended, not required.
-  use {
-	  'daltonmenezes/aura-theme',
-	  rtp = 'packages/neovim',
-	  config = function()
-		  vim.cmd("colorscheme aura-dark") -- Or any Aura theme available
-	  end
-  }
+  use { "catppuccin/nvim", as = "catppuccin" }
   use ('theprimeagen/harpoon')
   use ('mbbill/undotree')
   use ('tpope/vim-fugitive')

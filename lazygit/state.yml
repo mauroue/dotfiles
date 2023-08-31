@@ -1,8 +1,8 @@
 lastupdatecheck: 0
 recentrepos:
+- /home/mauroue/datacake/wda_backend
 - /home/mauroue/.config
 - /home/mauroue/.password-store
-- /home/mauroue/datacake/wda_backend
 - /home/mauroue/datacake/wda_frontend
 startuppopupversion: 5
 customcommandshistory:

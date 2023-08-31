@@ -6,7 +6,7 @@ lsp.ensure_installed({
 	'tsserver',
 	'eslint',
 	'lua_ls',
-    'jedi_language_server',
+    'pyright'
 })
 
 local cmp = require('cmp')
