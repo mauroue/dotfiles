@@ -49,11 +49,29 @@ return require('packer').startup(function(use)
       requires = {'nvim-lua/plenary.nvim'},
       config = function()
           require('yapf').setup {
-              command= "--style='{based_on_style: google}'"
+              command= "--style='{based_on_style: pep8}'"
           }
       end,
   }
   use {'mfussenegger/nvim-dap'}
-  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+  use { 'theHamsta/nvim-dap-virtual-text' }
   use { "christoomey/vim-tmux-navigator" }
+  use { "tpope/vim-dadbod" }
+  use { "kristijanhusak/vim-dadbod-ui" }
+  use { "kristijanhusak/vim-dadbod-completion" }
+  use {
+      'numToStr/Comment.nvim',
+      config = function()
+          require('Comment').setup()
+      end
+  }
+  use {
+    "ThePrimeagen/refactoring.nvim",
+    requires = {
+        {"nvim-lua/plenary.nvim"},
+        {"nvim-treesitter/nvim-treesitter"}
+    }
+  }
+  use { "folke/neodev.nvim" }
+
 end)
