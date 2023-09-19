@@ -28,7 +28,8 @@ return require('packer').startup(function(use)
           -- Autocompletion
           {'hrsh7th/nvim-cmp'},     -- Required
           {'hrsh7th/cmp-nvim-lsp'}, -- Required
-          {'L3MON4D3/LuaSnip'},     -- Required
+	  {'L3MON4D3/LuaSnip'},     -- Required
+	  {'saadparwaiz1/cmp_luasnip'},
       }
   }
   -- Lua
@@ -53,7 +54,7 @@ return require('packer').startup(function(use)
           }
       end,
   }
-  use {'mfussenegger/nvim-dap'}
+  use { 'mfussenegger/nvim-dap' }
   use { 'theHamsta/nvim-dap-virtual-text' }
   use { "christoomey/vim-tmux-navigator" }
   use { "tpope/vim-dadbod" }
@@ -73,14 +74,22 @@ return require('packer').startup(function(use)
     }
   }
   use { "folke/neodev.nvim" }
-  use({
-      "L3MON4D3/LuaSnip",
-      -- follow latest release.
-      tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-      -- install jsregexp (optional!:).
-      run = "make install_jsregexp",
-      event = "BufReadPre",
-  })
   use { "honza/vim-snippets" }
+  use { "jackMort/ChatGPT.nvim",
+    requires = {
+        "MunifTanjim/nui.nvim"
+    },
+    config = function ()
+        require('chatgpt').setup({
+            api_key_cmd = "pass show api/tokens/openai"
+        })
+    end
+  }
+  use { "kdheepak/lazygit.nvim",
+        requires = {
+            "nvim-lua/plenary.nvim",
+        },
+    }
+  use { "eandrju/cellular-automaton.nvim" }
 
 end)
